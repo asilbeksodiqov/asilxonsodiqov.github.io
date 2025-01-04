@@ -1,16 +1,53 @@
+// Foydalanuvchi yozgan xabarlarning logini saqlash
+let userLogs = [];
+
+// Foydalanuvchi xabarlarini logga qo'shish
+function logUserMessage(message) {
+  userLogs.push(message);
+  console.log("Foydalanuvchi xabari:", message); // Konsolda ko'rsatish
+  localStorage.setItem("userLogs", JSON.stringify(userLogs)); // Brauzerda saqlash
+}
+
+// Saqlangan foydalanuvchi xabarlarini olish
+function loadUserLogs() {
+  const savedLogs = JSON.parse(localStorage.getItem("userLogs"));
+  if (savedLogs) {
+    userLogs = savedLogs;
+    console.log("Foydalanuvchi xabarlar logi yuklandi:", userLogs);
+  }
+}
+
+// Foydalanuvchi loglarini HTML orqali ko'rsatish
+document.getElementById("viewLogsButton").addEventListener("click", function () {
+  const logsBox = document.getElementById("userLogsBox");
+  if (logsBox.style.display === "none") {
+    logsBox.style.display = "block";
+    logsBox.innerHTML = userLogs.map((log, index) => `<p>${index + 1}. ${log}</p>`).join("");
+  } else {
+    logsBox.style.display = "none";
+  }
+});
+
 // Foydalanuvchi xabarlarini qayta ishlash
 document.getElementById("sendButton").addEventListener("click", function () {
   const userInput = document.getElementById("userInput").value.trim();
   if (userInput) {
     addMessage("user", userInput);
-    
+    logUserMessage(userInput); // Xabarni logga qo'shish
     // Loadingni ko'rsatish
     document.getElementById("loading").style.display = "block";  // Loading animatsiyasini ko'rsatish
-    
     botReply(userInput);
     document.getElementById("userInput").value = ""; // Inputni tozalash
   }
 });
+
+// Sahifa yuklanganda foydalanuvchi loglarini yuklash
+window.onload = function () {
+  loadChat();
+  loadUserLogs(); // Loglarni yuklash
+  document.getElementById("saveButton").addEventListener("click", saveChat);
+  document.getElementById("clearButton").addEventListener("click", clearChat);
+};
 
 // Xabarlarni chat oynasiga qo'shish
 function addMessage(sender, message) {
