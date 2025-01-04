@@ -22,9 +22,9 @@ header {
 
 /* Chatbox uslubi */
 #chatbox {
-  width: 400px;
+  width: "device-width";
   max-width: auto;
-  height: 400px;
+  height: "device-height";
   border: 1px solid #ccc;
   border-color: #005f73;
   border-radius: 10px;
@@ -38,8 +38,8 @@ header {
 
 /* User input va send tugmasi */
 #userInput {
-  width: 330px;
-  height: 20px;
+  width: "device-width";
+  height: "device-height";
   display: block;
   background-color: white;
   padding: 10px;
