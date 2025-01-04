@@ -40,7 +40,7 @@ header {
 /* User input va send tugmasi */
 #userInput {
   width: calc(100% - 70px);
-  padding: 10px;
+  padding: 100px;
   border-radius: 5px;
   border: 2px solid #ccc;
   margin-right: 5px;
