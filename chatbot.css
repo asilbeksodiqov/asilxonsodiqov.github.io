@@ -23,8 +23,8 @@ header {
 
 /* Chatbox uslubi */
 #chatbox {
-  width: 10px;
-  max-width: 100px; /* Maksimal kenglikni cheklash */
+  width: 100%;
+  max-width: 400px; /* Maksimal kenglikni oshirish */
   height: auto;
   min-height: 400px; /* Minimal balandlik */
   border: 1px solid #ccc;
@@ -40,17 +40,13 @@ header {
 
 /* User input va send tugmasi */
 #userInput {
-  width: 100%;
-  max-width: 330px;
+  width: calc(100% - 80px); /* O'ng va chapdan bo'sh joy qoldirish */
   height: 40px; /* Balandlikni oshirish */
-  display: block;
   background-color: white;
   padding: 10px;
   border: 2px solid #ccc;
   border-radius: 10px;
   margin-right: 10px;
-  margin-left: 50px;
-  margin-top: 50px;
   font-size: 16px;
   transition: background-color 0.3s;
 }
@@ -61,16 +57,11 @@ header {
 }
 
 #sendButton {
-  width: 100%;
-  max-width: 70px;
+  width: 70px;
   height: 42px;
-  display: block;
   padding: 10px;
   background-color: #005f73;
   border-radius: 10px;
-  margin-right: 50px;
-  margin-left: 7px;
-  margin-top: 50px;
   cursor: pointer;
   font-size: 16px;
   color: white;
@@ -119,4 +110,15 @@ header {
   margin-bottom: 10px;
   max-width: 70%;
   margin-right: auto;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  #chatbox {
+    max-width: 100%; /* Maksimal kenglikni 100% qilish */
+  }
+  
+  #userInput {
+    width: calc(100% - 90px); /* Tugmani hisobga olgan holda kenglikni moslashtirish */
+  }
 }
