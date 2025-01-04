@@ -14,7 +14,7 @@ body {
 /* Header */
 header {
   text-align: center;
-  padding: 2em;
+  padding: 4em;
   background-color: #005f73;
   color: #fff;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
@@ -24,7 +24,7 @@ header {
 /* Chatbox uslubi */
 #chatbox {
   width: 100%;
-  max-width:"device-width"px;
+  max-width: 500px;
   height: 400px;
   border: 1px solid #ccc;
   border-radius: 10px;
