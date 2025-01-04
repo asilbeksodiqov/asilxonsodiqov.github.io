@@ -2,12 +2,13 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
   box-sizing: border-box;
 }
 
@@ -23,9 +24,10 @@ header {
 
 /* Chatbox uslubi */
 #chatbox {
+  flex-grow: 1;
   width: 100%;
-  max-width: 500px;
-  height: 400px;
+  max-width: none;
+  height: calc(100vh - 100px);
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow-y: auto;
@@ -37,7 +39,7 @@ header {
 
 /* User input va send tugmasi */
 #userInput {
-  width: 10000%;
+  width: calc(100% - 70px);
   padding: 10px;
   border-radius: 5px;
   border: 2px solid #ccc;
