@@ -23,7 +23,7 @@ header {
 
 /* Chatbox uslubi */
 #chatbox {
-  width: 10%;
+  width: 10px;
   max-width: 100px; /* Maksimal kenglikni cheklash */
   height: auto;
   min-height: 400px; /* Minimal balandlik */
