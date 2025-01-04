@@ -37,8 +37,8 @@ header {
 
 /* User input va send tugmasi */
 #userInput {
-  width: 10000%;
-  padding: 10px;
+  width: 100%;
+  padding: 100px;
   border-radius: 5px;
   border: 2px solid #ccc;
   margin-right: 5px;
