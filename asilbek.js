@@ -6,31 +6,6 @@ menuIcon.onclick = () => {
     navLinks.classList.toggle(`active`);
 }
 
-let followCount = localStorage.getItem('followCount') 
-    ? parseInt(localStorage.getItem('followCount')) 
-    : 0;
-
-let hasFollowed = localStorage.getItem('hasFollowed') === 'true';
-
-const followBtn = document.getElementById('follow-btn');
-const followCountDisplay = document.getElementById('follow-count');
-const errorMsg = document.getElementById('error-msg');
-
-followCountDisplay.innerText = `${followCount}`;
-if (hasFollowed) {
-    followBtn.disabled = true;
-}
-
-followBtn.addEventListener('click', () => {
-    if (!hasFollowed) {
-        followCount += 1;
-        localStorage.setItem('followCount', followCount);
-        localStorage.setItem('hasFollowed', 'true');
-        followCountDisplay.innerText = `Followers: ${followCount}`;
-        followBtn.disabled = true;
-    }
-});
-
 const languageData = {
     uz: {
         hi: "Salom, men",
