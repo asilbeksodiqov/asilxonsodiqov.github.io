@@ -10,8 +10,8 @@ body {
 
 .chat-container {
     width: 100%;
-    height: 100%; /* Ekranning butun balandligini qoplaydi */
-    max-width: none; /* Maksimal kenglikni olib tashlash */
+    height: 90%;
+    max-width: none;
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -24,7 +24,7 @@ body {
 .chat-box {
     display: flex;
     flex-direction: column;
-    flex: 1; /* Bu qism qolgan bo'sh joyni egallaydi */
+    flex: 1;
     overflow-y: auto;
     padding: 10px;
     border-bottom: 1px solid #ccc;
@@ -83,7 +83,6 @@ body {
     font-size: 15px;
 }
 
-/* Yozish animatsiyasi */
 .chat-box .bot .typing-animation {
     display: inline-block;
     width: 10px;
